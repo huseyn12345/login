@@ -1,8 +1,4 @@
-using System;
-using System.Linq;
-using System.Windows.Forms;
-
-namespace WinFormsApp1
+namespace MPL3
 {
     public partial class Form1 : Form
     {
@@ -13,55 +9,30 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string pass = password.Text;
+            string gender = "";
+            if (radioButton1.Checked) gender = radioButton1.Text;
+            else if (radioButton2.Checked) gender = radioButton2.Text;
+            else if (radioButton3.Checked) gender = radioButton3.Text;
+            else gender = "N/A";
 
-            if (pass.Length < 8)
-            {
-                MessageBox.Show("En az 8 simvoldan ibaret olmalidir");
-                return;
-            }
+            string programmingLanguages = "";
+            if (checkBox1.Checked) programmingLanguages += checkBox1.Text + " ";
+            if (checkBox2.Checked) programmingLanguages += checkBox2.Text + " ";
+            if (checkBox3.Checked) programmingLanguages += checkBox3.Text + " ";
+            if (programmingLanguages == "") programmingLanguages = "N/A";
 
-            string specialSymbols = "!@#$%^&*()-_=+[]{}|;:'\",.<>?/`~";
-            string upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            string lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-            string digits = "0123456789";
+            string country = "";
+            if (comboBox1.SelectedItem != null) country = comboBox1.SelectedItem.ToString();
+            else country = "N/A";
 
-            bool hasUpper = false;
-            bool hasLower = false;
-            bool hasDigit = false;
-            bool hasSpecial = false;
-            bool has3InARow = false;
+            string city = "";
+            if (listBox1.SelectedItem != null) city = listBox1.SelectedItem.ToString();
+            else city = "N/A";
 
-            for (int i = 0; i < pass.Length; i++)
-            {
-                char c = pass[i];
-
-                if (digits.Contains(c)) hasDigit = true;
-                if (upperLetters.Contains(c)) hasUpper = true;
-                if (lowerLetters.Contains(c)) hasLower = true;
-                if (specialSymbols.Contains(c)) hasSpecial = true;
-
-                if (i + 2 < pass.Length)
-                {
-                    if (digits.Contains(pass[i]) && digits.Contains(pass[i + 1]) && digits.Contains(pass[i + 2])) has3InARow = true;
-                    if (upperLetters.Contains(pass[i]) && upperLetters.Contains(pass[i + 1]) && upperLetters.Contains(pass[i + 2])) has3InARow = true;
-                    if (lowerLetters.Contains(pass[i]) && lowerLetters.Contains(pass[i + 1]) && lowerLetters.Contains(pass[i + 2])) has3InARow = true;
-                    if (specialSymbols.Contains(pass[i]) && specialSymbols.Contains(pass[i + 1]) && specialSymbols.Contains(pass[i + 2])) has3InARow = true;
-                }
-            }
-
-            if (hasDigit && hasLower && hasUpper && hasSpecial && !has3InARow)
-            {
-                MessageBox.Show("Sifre ugurla yaradildi");
-            }
-            else
-            {
-                if (!hasUpper) MessageBox.Show("En az 1 boyuk herf olmalidir");
-                if (!hasLower) MessageBox.Show("En az 1 kicik herf olmalidir");
-                if (!hasDigit) MessageBox.Show("En az 1 reqem olmalidir");
-                if (!hasSpecial) MessageBox.Show("En az 1 xususi simvol olmalidir");
-                if (has3InARow) MessageBox.Show("Eyni tipli simvollar ard-arda 3 defe gele bilmez");
-            }
+            MessageBox.Show("Gender: " + gender +
+                            "\nCountry: " + country +
+                            "\nCity: " + city +
+                            "\nProgramming Languages: " + programmingLanguages);
         }
     }
 }
