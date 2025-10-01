@@ -1,38 +1,69 @@
+using System;
+using System.Windows.Forms;
+
 namespace MPL3
 {
     public partial class Form1 : Form
     {
+        private string currentOperator = "";
+        private double firstNumber = 0;
+        private bool isOperatorClicked = false;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Number_Click(object sender, EventArgs e)
         {
-            string gender = "";
-            if (radioButton1.Checked) gender = radioButton1.Text;
-            else if (radioButton2.Checked) gender = radioButton2.Text;
-            else if (radioButton3.Checked) gender = radioButton3.Text;
-            else gender = "N/A";
+            Button button = (Button)sender;
+            if (txtDisplay.Text == "0" || isOperatorClicked)
+                txtDisplay.Text = "";
+            isOperatorClicked = false;
+            txtDisplay.Text += button.Text;
+        }
 
-            string programmingLanguages = "";
-            if (checkBox1.Checked) programmingLanguages += checkBox1.Text + " ";
-            if (checkBox2.Checked) programmingLanguages += checkBox2.Text + " ";
-            if (checkBox3.Checked) programmingLanguages += checkBox3.Text + " ";
-            if (programmingLanguages == "") programmingLanguages = "N/A";
+        private void Operator_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            currentOperator = button.Text;
+            firstNumber = double.Parse(txtDisplay.Text);
+            isOperatorClicked = true;
+        }
 
-            string country = "";
-            if (comboBox1.SelectedItem != null) country = comboBox1.SelectedItem.ToString();
-            else country = "N/A";
+        private void Equals_Click(object sender, EventArgs e)
+        {
+            double secondNumber = double.Parse(txtDisplay.Text);
+            double result = 0;
 
-            string city = "";
-            if (listBox1.SelectedItem != null) city = listBox1.SelectedItem.ToString();
-            else city = "N/A";
+            switch (currentOperator)
+            {
+                case "+":
+                    result = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    result = firstNumber - secondNumber;
+                    break;
+                case "*":
+                    result = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    if (secondNumber != 0)
+                        result = firstNumber / secondNumber;
+                    else
+                        MessageBox.Show("0-a bölmək olmaz!");
+                    break;
+            }
 
-            MessageBox.Show("Gender: " + gender +
-                            "\nCountry: " + country +
-                            "\nCity: " + city +
-                            "\nProgramming Languages: " + programmingLanguages);
+            txtDisplay.Text = result.ToString();
+            isOperatorClicked = false;
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = "0";
+            firstNumber = 0;
+            currentOperator = "";
         }
     }
 }
