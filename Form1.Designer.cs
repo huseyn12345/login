@@ -1,101 +1,125 @@
-namespace MPL3
+namespace Travel_Ticket_Modern
 {
     partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.TextBox txtDisplay;
-        private System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.Button btn2;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEquals;
-        private System.Windows.Forms.Button btnClear;
+
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox maskedTextBox2;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private MaskedTextBox maskedTextBox3;
+        private MaskedTextBox maskedTextBox4;
+        private TextBox textBox3;
+        private ListBox listBox1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
-            this.txtDisplay = new System.Windows.Forms.TextBox();
-            this.btn1 = new System.Windows.Forms.Button();
-            this.btn2 = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEquals = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            maskedTextBox1 = new MaskedTextBox();
+            maskedTextBox2 = new MaskedTextBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            maskedTextBox3 = new MaskedTextBox();
+            maskedTextBox4 = new MaskedTextBox();
+            textBox3 = new TextBox();
+            listBox1 = new ListBox();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            SuspendLayout();
 
-            // txtDisplay
-            this.txtDisplay.Location = new System.Drawing.Point(12, 12);
-            this.txtDisplay.Name = "txtDisplay";
-            this.txtDisplay.Size = new System.Drawing.Size(210, 23);
-            this.txtDisplay.TabIndex = 0;
-            this.txtDisplay.Text = "0";
-            this.txtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // ComboBox1
+            comboBox1.Location = new System.Drawing.Point(40, 30);
+            comboBox1.Size = new System.Drawing.Size(140, 24);
+            comboBox1.Items.AddRange(new object[] { "Baku", "Ganja", "Sumgait", "Lankaran" });
 
-            // btn1
-            this.btn1.Location = new System.Drawing.Point(12, 50);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(45, 45);
-            this.btn1.TabIndex = 1;
-            this.btn1.Text = "1";
-            this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.Click += new System.EventHandler(this.Number_Click);
+            // ComboBox2
+            comboBox2.Location = new System.Drawing.Point(200, 30);
+            comboBox2.Size = new System.Drawing.Size(140, 24);
+            comboBox2.Items.AddRange(new object[] { "Baku", "Ganja", "Sumgait", "Lankaran" });
 
-            // btn2
-            this.btn2.Location = new System.Drawing.Point(63, 50);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(45, 45);
-            this.btn2.TabIndex = 2;
-            this.btn2.Text = "2";
-            this.btn2.UseVisualStyleBackColor = true;
-            this.btn2.Click += new System.EventHandler(this.Number_Click);
+            // MaskedTextBox1 (Date)
+            maskedTextBox1.Location = new System.Drawing.Point(40, 70);
+            maskedTextBox1.Mask = "00/00/0000";
 
-            // btnAdd
-            this.btnAdd.Location = new System.Drawing.Point(114, 50);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(45, 45);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "+";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.Operator_Click);
+            // MaskedTextBox2 (Time)
+            maskedTextBox2.Location = new System.Drawing.Point(200, 70);
+            maskedTextBox2.Mask = "00:00";
 
-            // btnEquals
-            this.btnEquals.Location = new System.Drawing.Point(165, 50);
-            this.btnEquals.Name = "btnEquals";
-            this.btnEquals.Size = new System.Drawing.Size(45, 45);
-            this.btnEquals.TabIndex = 4;
-            this.btnEquals.Text = "=";
-            this.btnEquals.UseVisualStyleBackColor = true;
-            this.btnEquals.Click += new System.EventHandler(this.Equals_Click);
+            // Seat
+            textBox1.Location = new System.Drawing.Point(40, 110);
+            textBox1.PlaceholderText = "Seat No";
 
-            // btnClear
-            this.btnClear.Location = new System.Drawing.Point(12, 101);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(198, 30);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "C";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.Clear_Click);
+            // Name
+            textBox2.Location = new System.Drawing.Point(200, 110);
+            textBox2.PlaceholderText = "Name";
+
+            // Zip Code
+            maskedTextBox3.Location = new System.Drawing.Point(40, 150);
+            maskedTextBox3.Mask = "0000";
+
+            // Phone
+            maskedTextBox4.Location = new System.Drawing.Point(200, 150);
+            maskedTextBox4.Mask = "(000) 000-0000";
+
+            // Email
+            textBox3.Location = new System.Drawing.Point(40, 190);
+            textBox3.Size = new System.Drawing.Size(300, 22);
+            textBox3.PlaceholderText = "Email";
+
+            // ListBox
+            listBox1.Location = new System.Drawing.Point(40, 230);
+            listBox1.Size = new System.Drawing.Size(300, 120);
+
+            // Button1 (Swap)
+            button1.Location = new System.Drawing.Point(360, 30);
+            button1.Size = new System.Drawing.Size(90, 30);
+            button1.Text = "Swap";
+            button1.Click += button1_Click;
+
+            // Button2 (Add Ticket)
+            button2.Location = new System.Drawing.Point(360, 70);
+            button2.Size = new System.Drawing.Size(90, 30);
+            button2.Text = "Add";
+            button2.Click += button2_Click;
+
+            // Button3 (Remove)
+            button3.Location = new System.Drawing.Point(360, 110);
+            button3.Size = new System.Drawing.Size(90, 30);
+            button3.Text = "Remove";
+            button3.Click += button3_Click;
+
+            // Button4 (Exit)
+            button4.Location = new System.Drawing.Point(360, 150);
+            button4.Size = new System.Drawing.Size(90, 30);
+            button4.Text = "Exit";
+            button4.Click += button4_Click;
 
             // Form1
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 151);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnEquals);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btn2);
-            this.Controls.Add(this.btn1);
-            this.Controls.Add(this.txtDisplay);
-            this.Name = "Form1";
-            this.Text = "Sadə Kalkulyator";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(480, 380);
+            Controls.AddRange(new Control[] { comboBox1, comboBox2, maskedTextBox1, maskedTextBox2, textBox1, textBox2, maskedTextBox3, maskedTextBox4, textBox3, listBox1, button1, button2, button3, button4 });
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Text = "Travel Ticket Modern";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }
