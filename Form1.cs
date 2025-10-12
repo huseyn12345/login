@@ -36,7 +36,7 @@ private void button4_Click(object sender, EventArgs e) { StartTimer(maskedTextBo
 private void timer4_Tick(object sender, EventArgs e) { TimerTick(ref counter4, textBox7, groupBox4, textBox8, maskedTextBox4); }
 
 
-// Funksiyaları təkrar yazmadan hər düymə üçün istifadə edirik
+
 private void StartTimer(MaskedTextBox durationBox, TextBox groupBoxCodeBox, TextBox counterBox, GroupBox group, ref int counter, System.Windows.Forms.Timer timer)
 {
 if(durationBox.Text == "") { MessageBox.Show("Zəhmət olmasa müddət daxil edin"); return; }
