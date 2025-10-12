@@ -1,82 +1,66 @@
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-namespace Travel_Ticket_Modern
+namespace Classroom_rezerv
 {
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-            ApplyModernTheme();
-        }
+public partial class Form1 : Form
+{
+public Form1()
+{
+InitializeComponent();
+}
 
-        private void ApplyModernTheme()
-        {
-            this.BackColor = Color.FromArgb(235, 242, 250); // Açıq mavi-boz fon
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is Button btn)
-                {
-                    btn.BackColor = Color.FromArgb(58, 123, 213); // Mavi ton
-                    btn.ForeColor = Color.White;
-                    btn.FlatStyle = FlatStyle.Flat;
-                    btn.FlatAppearance.BorderSize = 0;
-                    btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                }
-                else if (ctrl is ComboBox || ctrl is TextBox || ctrl is MaskedTextBox)
-                {
-                    ctrl.BackColor = Color.White;
-                    ctrl.ForeColor = Color.Black;
-                }
-                else if (ctrl is ListBox lb)
-                {
-                    lb.BackColor = Color.WhiteSmoke;
-                    lb.Font = new Font("Segoe UI", 9, FontStyle.Regular);
-                }
-            }
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedItem == null || comboBox2.SelectedItem == null)
-            {
-                MessageBox.Show("Please select departure and destination.", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+private void Form1_Load(object sender, EventArgs e)
+{
+timer1.Interval = 1000;
+timer2.Interval = 1000;
+timer3.Interval = 1000;
+timer4.Interval = 1000;
+}
 
-            string from = comboBox1.SelectedItem.ToString();
-            string to = comboBox2.SelectedItem.ToString();
-            string date = maskedTextBox1.Text;
-            string time = maskedTextBox2.Text;
-            string seat = textBox1.Text;
-            string name = textBox2.Text;
-            string zipCode = maskedTextBox3.Text;
-            string phone = maskedTextBox4.Text;
-            string email = textBox3.Text;
 
-            string ticket = $"From: {from}\nTo: {to}\nDate: {date}\nTime: {time}\nSeat No: {seat}\nName: {name}\nZip Code: {zipCode}\nPhone: {phone}\nEmail: {email}";
-            listBox1.Items.Add(ticket);
-        }
+int counter1=0,counter2=0,counter3=0,counter4=0;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string temp = comboBox1.Text;
-            comboBox1.Text = comboBox2.Text;
-            comboBox2.Text = temp;
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedItem != null)
-                listBox1.Items.Remove(listBox1.SelectedItem);
-        }
+private void button1_Click(object sender, EventArgs e) { StartTimer(maskedTextBox1, textBox1, textBox2, groupBox1, ref counter1, timer1); }
+private void timer1_Tick(object sender, EventArgs e) { TimerTick(ref counter1, textBox2, groupBox1, textBox1, maskedTextBox1); }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-    }
+
+private void button2_Click(object sender, EventArgs e) { StartTimer(maskedTextBox2, textBox4, textBox3, groupBox2, ref counter2, timer2); }
+private void timer2_Tick(object sender, EventArgs e) { TimerTick(ref counter2, textBox3, groupBox2, textBox4, maskedTextBox2); }
+
+
+private void button3_Click(object sender, EventArgs e) { StartTimer(maskedTextBox3, textBox6, textBox5, groupBox3, ref counter3, timer3); }
+private void timer3_Tick(object sender, EventArgs e) { TimerTick(ref counter3, textBox5, groupBox3, textBox6, maskedTextBox3); }
+
+
+private void button4_Click(object sender, EventArgs e) { StartTimer(maskedTextBox4, textBox8, textBox7, groupBox4, ref counter4, timer4); }
+private void timer4_Tick(object sender, EventArgs e) { TimerTick(ref counter4, textBox7, groupBox4, textBox8, maskedTextBox4); }
+
+
+// Funksiyaları təkrar yazmadan hər düymə üçün istifadə edirik
+private void StartTimer(MaskedTextBox durationBox, TextBox groupBoxCodeBox, TextBox counterBox, GroupBox group, ref int counter, System.Windows.Forms.Timer timer)
+{
+if(durationBox.Text == "") { MessageBox.Show("Zəhmət olmasa müddət daxil edin"); return; }
+if(groupBoxCodeBox.Text == "") { MessageBox.Show("Zəhmət olmasa qrup kodu daxil edin"); return; }
+counter = Convert.ToInt32(durationBox.Text);
+counterBox.Text = counter.ToString();
+group.BackColor = Color.Red;
+timer.Tick += (s,e) => { TimerTick(ref counter, counterBox, group, groupBoxCodeBox, durationBox); };
+timer.Start();
+}
+
+
+private void TimerTick(ref int counter, TextBox counterBox, GroupBox group, TextBox groupBoxCodeBox, MaskedTextBox durationBox)
+{
+counter--;
+counterBox.Text = counter.ToString();
+if(counter==0)
+{
+var t = group.BackColor;
+counterBox.Clear();
+groupBoxCodeBox.Clear();
+durationBox.Clear();
+group.BackColor = Color.Green;
+}
+}
+}
 }
