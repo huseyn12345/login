@@ -1,157 +1,141 @@
-namespace UserCheck
+namespace StudentSystem
 {
     partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
 
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
+            {
                 components.Dispose();
+            }
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            Username = new DataGridViewTextBoxColumn();
-            Password = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            titleLabel = new Label();
+            this.components = new System.ComponentModel.Container();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
 
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
 
-            // Form
-            BackColor = Color.FromArgb(35, 39, 42);
-            ClientSize = new Size(540, 530);
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "User Add";
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
+            this.SuspendLayout();
 
-            // Title Label
-            titleLabel.Text = "User Registration Panel";
-            titleLabel.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
-            titleLabel.ForeColor = Color.FromArgb(114, 137, 218);
-            titleLabel.AutoSize = false;
-            titleLabel.Dock = DockStyle.Top;
-            titleLabel.Height = 60;
-            titleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // maskedTextBox1
+            this.maskedTextBox1.Location = new System.Drawing.Point(20, 20);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
 
-            // DataGridView
-            dataGridView1.BackgroundColor = Color.FromArgb(44, 47, 51);
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(114, 137, 218);
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = Color.FromArgb(153, 170, 181);
-            dataGridView1.ColumnHeadersHeight = 30;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Username, Password, Date });
-            dataGridView1.Dock = DockStyle.Top;
-            dataGridView1.Height = 200;
+            // maskedTextBox2
+            this.maskedTextBox2.Location = new System.Drawing.Point(20, 60);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 22);
 
-            Username.HeaderText = "Username";
-            Username.Name = "Username";
-            Username.Width = 160;
+            // maskedTextBox3
+            this.maskedTextBox3.Location = new System.Drawing.Point(20, 100);
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(100, 22);
 
-            Password.HeaderText = "Password";
-            Password.Name = "Password";
-            Password.Width = 160;
+            // maskedTextBox4
+            this.maskedTextBox4.Location = new System.Drawing.Point(20, 140);
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(100, 22);
 
-            Date.HeaderText = "Registration Date";
-            Date.Name = "Date";
-            Date.Width = 180;
+            // maskedTextBox5
+            this.maskedTextBox5.Location = new System.Drawing.Point(20, 180);
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(100, 22);
 
-            // Label1
-            label1.Text = "Username";
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(20, 230);
-            label1.AutoSize = true;
+            // maskedTextBox6
+            this.maskedTextBox6.Location = new System.Drawing.Point(20, 220);
+            this.maskedTextBox6.Name = "maskedTextBox6";
+            this.maskedTextBox6.Size = new System.Drawing.Size(100, 22);
 
-            // TextBox1
-            textBox1.Location = new Point(20, 260);
-            textBox1.Size = new Size(490, 30);
-            textBox1.Font = new Font("Segoe UI", 11F);
-            textBox1.BackColor = Color.FromArgb(64, 68, 75);
-            textBox1.ForeColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            // textBox1
+            this.textBox1.Location = new System.Drawing.Point(150, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(150, 22);
 
-            // Label2
-            label2.Text = "Password";
-            label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(20, 305);
-            label2.AutoSize = true;
+            // button1
+            this.button1.Location = new System.Drawing.Point(150, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.Text = "Add";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
 
-            // TextBox2
-            textBox2.Location = new Point(20, 335);
-            textBox2.Size = new Size(490, 30);
-            textBox2.Font = new Font("Segoe UI", 11F);
-            textBox2.BackColor = Color.FromArgb(64, 68, 75);
-            textBox2.ForeColor = Color.White;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            // button2
+            this.button2.Location = new System.Drawing.Point(150, 100);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 30);
+            this.button2.Text = "Clear";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
 
-            // Button1
-            button1.Text = "Add User";
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button1.Size = new Size(490, 40);
-            button1.Location = new Point(20, 385);
-            button1.BackColor = Color.FromArgb(46, 204, 113);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.ForeColor = Color.White;
-            button1.Cursor = Cursors.Hand;
-            button1.Click += button1_Click;
+            // button3
+            this.button3.Location = new System.Drawing.Point(150, 140);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 30);
+            this.button3.Text = "Exit";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
 
-            // Button2
-            button2.Text = "Go to User Check Page";
-            button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button2.Size = new Size(490, 40);
-            button2.Location = new Point(20, 440);
-            button2.BackColor = Color.FromArgb(52, 152, 219);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.ForeColor = Color.White;
-            button2.Cursor = Cursors.Hand;
-            button2.Click += button2_Click;
+            // dataGridView1
+            this.dataGridView1.Location = new System.Drawing.Point(20, 260);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(400, 200);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
-            // Add Controls
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
-            Controls.Add(dataGridView1);
-            Controls.Add(titleLabel);
+            // Form1
+            this.ClientSize = new System.Drawing.Size(450, 500);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.maskedTextBox4);
+            this.Controls.Add(this.maskedTextBox5);
+            this.Controls.Add(this.maskedTextBox6);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "Form1";
+            this.Text = "Student System";
 
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
-
-        #endregion
-
-        private Label titleLabel;
-        public DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Username;
-        private DataGridViewTextBoxColumn Password;
-        private DataGridViewTextBoxColumn Date;
-        private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label2;
-        private Button button1;
-        private Button button2;
     }
 }
