@@ -1,24 +1,16 @@
-namespace StudentSystem
+﻿namespace RandomNumberGenerator
 {
     partial class Form1
     {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
-
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -28,114 +20,104 @@ namespace StudentSystem
             base.Dispose(disposing);
         }
 
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-
-            this.SuspendLayout();
-
-            // maskedTextBox1
-            this.maskedTextBox1.Location = new System.Drawing.Point(20, 20);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 22);
-
-            // maskedTextBox2
-            this.maskedTextBox2.Location = new System.Drawing.Point(20, 60);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 22);
-
-            // maskedTextBox3
-            this.maskedTextBox3.Location = new System.Drawing.Point(20, 100);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 22);
-
-            // maskedTextBox4
-            this.maskedTextBox4.Location = new System.Drawing.Point(20, 140);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(100, 22);
-
-            // maskedTextBox5
-            this.maskedTextBox5.Location = new System.Drawing.Point(20, 180);
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(100, 22);
-
-            // maskedTextBox6
-            this.maskedTextBox6.Location = new System.Drawing.Point(20, 220);
-            this.maskedTextBox6.Name = "maskedTextBox6";
-            this.maskedTextBox6.Size = new System.Drawing.Size(100, 22);
-
-            // textBox1
-            this.textBox1.Location = new System.Drawing.Point(150, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 22);
-
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            button1 = new Button();
+            listBox1 = new ListBox();
+            button2 = new Button();
+            maskedTextBox1 = new MaskedTextBox();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(maskedTextBox1);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Location = new Point(103, 79);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(309, 308);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "axtaris";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(83, 106);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 20);
+            label1.TabIndex = 2;
+            label1.Text = "axtarilan eded";
+            // 
             // button1
-            this.button1.Location = new System.Drawing.Point(150, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.Text = "Add";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-
+            // 
+            button1.Location = new Point(83, 189);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 1;
+            button1.Text = "axtar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(448, 90);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(293, 244);
+            listBox1.TabIndex = 3;
+            // 
             // button2
-            this.button2.Location = new System.Drawing.Point(150, 100);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 30);
-            this.button2.Text = "Clear";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-
-            // button3
-            this.button3.Location = new System.Drawing.Point(150, 140);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 30);
-            this.button3.Text = "Exit";
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-
-            // dataGridView1
-            this.dataGridView1.Location = new System.Drawing.Point(20, 260);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(400, 200);
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
+            // 
+            button2.Location = new Point(543, 358);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 4;
+            button2.Text = "yeni oyun";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(83, 142);
+            maskedTextBox1.Mask = "00";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(104, 27);
+            maskedTextBox1.TabIndex = 5;
+            maskedTextBox1.ValidatingType = typeof(int);
+            // 
             // Form1
-            this.ClientSize = new System.Drawing.Size(450, 500);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox4);
-            this.Controls.Add(this.maskedTextBox5);
-            this.Controls.Add(this.maskedTextBox6);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
-            this.Text = "Student System";
-
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(800, 450);
+            Controls.Add(button2);
+            Controls.Add(listBox1);
+            Controls.Add(groupBox1);
+            Name = "Form1";
+            Text = "Form1";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
+
+        #endregion
+
+        private GroupBox groupBox1;
+        private Label label1;
+        private Button button1;
+        private ListBox listBox1;
+        private Button button2;
+        private MaskedTextBox maskedTextBox1;
     }
 }
