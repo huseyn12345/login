@@ -1,4 +1,4 @@
-namespace Bomba
+namespace arkonoid
 {
     partial class Form1
     {
@@ -31,102 +31,59 @@ namespace Bomba
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            panel1 = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            timer2 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(188, 41);
+            pictureBox1.Location = new Point(129, 40);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(98, 85);
+            pictureBox1.Size = new Size(121, 109);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // panel1
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(653, 41);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(98, 85);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(365, 542);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(98, 85);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(490, 542);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(98, 85);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(435, 392);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(98, 85);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 4;
-            pictureBox5.TabStop = false;
+            panel1.BackColor = Color.Silver;
+            panel1.Location = new Point(311, 523);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(256, 26);
+            panel1.TabIndex = 1;
             // 
             // timer1
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // timer2
+            // 
+            timer2.Tick += timer2_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 657);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
+            BackColor = Color.FromArgb(255, 128, 0);
+            ClientSize = new Size(995, 619);
+            Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            KeyDown += Form1_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private Panel panel1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
