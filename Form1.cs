@@ -1,72 +1,94 @@
-namespace Bomba
+using System.Numerics;
+
+namespace arkonoid
 {
     public partial class Form1 : Form
     {
-        int time = 0;
-        Random rand = new Random();
-        List<PictureBox> bombs = new List<PictureBox>();
-        bool gameOver = false;
-
         public Form1()
         {
             InitializeComponent();
         }
-
+        int counter = 0;
+        Random randY = new Random();
+        Random randX = new Random();
+        Random randT = new Random();
+        int T = 0;
+        int x = 0;
+        int y = 0;
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left && panel1.Location.X > 0)
+            {
+                panel1.Location = new Point(panel1.Location.X - 10, panel1.Location.Y);
+            }
+            if (e.KeyCode == Keys.Right && panel1.Location.X <= 730)
+            {
+                panel1.Location = new Point(panel1.Location.X + 10, panel1.Location.Y);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer1.Interval = 100;
             timer1.Start();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            if (!gameOver)
-                pictureBox5.Location = new Point(pictureBox5.Location.X + 10, pictureBox5.Location.Y);
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (!gameOver)
-                pictureBox5.Location = new Point(pictureBox5.Location.X - 10, pictureBox5.Location.Y);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (gameOver) return;
-
-            if (time % 5 == 0)
+            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
+            if (pictureBox1.Bounds.IntersectsWith(panel1.Bounds))
             {
-                PictureBox bomb = new PictureBox();
-                bomb.Image = Properties.Resources.grenade;
-                bomb.SizeMode = PictureBoxSizeMode.StretchImage;
-                bomb.Size = new Size(40, 40);
-                bomb.BackColor = Color.Transparent;
-                bomb.Location = new Point(rand.Next(0, this.ClientSize.Width - bomb.Width), 0);
-                bombs.Add(bomb);
-                this.Controls.Add(bomb);
-                bomb.BringToFront();
+                counter++;
+                T = randT.Next(3, 10);
+                x = randX.Next(-50, 50);
+                y = randY.Next(10, 100);
+                timer2.Start();
             }
-
-            for (int i = bombs.Count - 1; i >= 0; i--)
+            else if(pictureBox1.Location.X <=0)
             {
-                bombs[i].Top += 10;
-
-                if (bombs[i].Bounds.IntersectsWith(pictureBox5.Bounds))
+                T = randT.Next(3, 10);
+                x = randX.Next(0, 50);
+                y = randY.Next(-50, 50);
+                timer2.Start();
+            }
+            else if (pictureBox1.Location.X >=800)
+            {
+                T = randT.Next(3, 10);
+                x = randX.Next(-50, 0);
+                y = randY.Next(-50, 50);
+                timer2.Start();
+            }
+            else if(pictureBox1.Location.Y==0)
+            {
+                T = randT.Next(3, 10);
+                x = randX.Next(-50, 50);
+                y = randY.Next(0, 50);
+                timer2.Start();
+            }
+            else if (pictureBox1.Location.Y > this.Height)
+            {
+             
+                timer1.Stop();
+                timer2.Stop();
+                MessageBox.Show("Game Over! Your score: " + counter);
+                DialogResult dr = MessageBox.Show("Do you want to play again?", "Restart", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
                 {
-                    timer1.Stop();
-                    gameOver = true;
-                    MessageBox.Show("Oyun bitdi");
-                    return;
+                    Application.Restart();
                 }
-
-                if (bombs[i].Top > this.ClientSize.Height)
+                else
                 {
-                    this.Controls.Remove(bombs[i]);
-                    bombs.RemoveAt(i);
+                    Application.Exit();
                 }
             }
+        }
 
-            time++;
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (T > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X + x, pictureBox1.Location.Y - y);
+ 
+                T--;
+            }
         }
     }
 }
