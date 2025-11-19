@@ -1,4 +1,4 @@
-namespace arkonoid
+﻿namespace AllFileCommand
 {
     partial class Form1
     {
@@ -28,62 +28,118 @@ namespace arkonoid
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            pictureBox1 = new PictureBox();
+            richTextBox1 = new RichTextBox();
+            button3 = new Button();
+            button1 = new Button();
+            button4 = new Button();
+            button2 = new Button();
             panel1 = new Panel();
-            timer1 = new System.Windows.Forms.Timer(components);
-            timer2 = new System.Windows.Forms.Timer(components);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            label1 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // richTextBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(129, 40);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(121, 109);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            richTextBox1.BorderStyle = BorderStyle.None;
+            richTextBox1.Location = new Point(238, 119);
+            richTextBox1.Margin = new Padding(3, 4, 3, 4);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(366, 378);
+            richTextBox1.TabIndex = 0;
+            richTextBox1.Text = "";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(14, 332);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(206, 67);
+            button3.TabIndex = 2;
+            button3.Text = "Remove file";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(14, 129);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(206, 67);
+            button1.TabIndex = 3;
+            button1.Text = "Read file";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(14, 434);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(206, 63);
+            button4.TabIndex = 4;
+            button4.Text = "Write file";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(14, 231);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(206, 70);
+            button2.TabIndex = 5;
+            button2.Text = "Add file";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Silver;
-            panel1.Location = new Point(311, 523);
+            panel1.BackColor = Color.FromArgb(255, 128, 0);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(256, 26);
-            panel1.TabIndex = 1;
+            panel1.Size = new Size(617, 112);
+            panel1.TabIndex = 6;
             // 
-            // timer1
+            // label1
             // 
-            timer1.Tick += timer1_Tick;
-            // 
-            // timer2
-            // 
-            timer2.Tick += timer2_Tick;
+            label1.AutoSize = true;
+            label1.Font = new Font("Rockwell Extra Bold", 28F, FontStyle.Bold);
+            label1.Location = new Point(139, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(341, 55);
+            label1.TabIndex = 0;
+            label1.Text = "PAPERMAN";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 128, 0);
-            ClientSize = new Size(995, 619);
+            BackColor = Color.FromArgb(192, 64, 0);
+            ClientSize = new Size(616, 529);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
+            Controls.Add(button2);
+            Controls.Add(button4);
+            Controls.Add(button1);
+            Controls.Add(button3);
+            Controls.Add(richTextBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
-            KeyDown += Form1_KeyDown;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "File";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private RichTextBox richTextBox1;
+        private Button button3;
+        private Button button1;
+        private Button button4;
+        private Button button2;
         private Panel panel1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
+        private Label label1;
     }
-}
+ }
